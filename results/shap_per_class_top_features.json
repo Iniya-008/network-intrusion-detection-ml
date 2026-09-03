@@ -1,0 +1,107 @@
+{
+  "BENIGN": {
+    "Destination Port": 0.0559865445533279,
+    "Init_Win_bytes_backward": 0.032086877391565384,
+    "Packet Length Variance": 0.029297119293136376,
+    "Fwd Packet Length Max": 0.027121035599393526,
+    "Fwd Packet Length Mean": 0.022344490509847097
+  },
+  "Bot": {
+    "Destination Port": 0.011320481932095157,
+    "Init_Win_bytes_backward": 0.007436133112007073,
+    "Total Length of Bwd Packets": 0.006424499081381716,
+    "Average Packet Size": 0.005717236336757143,
+    "Init_Win_bytes_forward": 0.005587055780572287
+  },
+  "DDoS": {
+    "Total Length of Fwd Packets": 0.038329496626662796,
+    "Fwd Packet Length Max": 0.034872340153942624,
+    "Fwd Packet Length Mean": 0.03359607893037031,
+    "Average Packet Size": 0.03164655811927475,
+    "Init_Win_bytes_backward": 0.028839458686789565
+  },
+  "DoS GoldenEye": {
+    "Total Length of Bwd Packets": 0.011430448598556376,
+    "Init_Win_bytes_backward": 0.0100326828142089,
+    "Flow Packets/s": 0.009340879576951107,
+    "Init_Win_bytes_forward": 0.008761437124180243,
+    "Packet Length Variance": 0.008731338133896751
+  },
+  "DoS Hulk": {
+    "Init_Win_bytes_backward": 0.0328115010395287,
+    "Packet Length Variance": 0.03226328183282234,
+    "Total Length of Bwd Packets": 0.03198088719477894,
+    "Fwd IAT Std": 0.02855581821113185,
+    "Average Packet Size": 0.026585176302899867
+  },
+  "DoS Slowhttptest": {
+    "Flow Packets/s": 0.010475169839070935,
+    "Fwd IAT Std": 0.009772653652290712,
+    "Total Length of Bwd Packets": 0.009283479133163864,
+    "Average Packet Size": 0.00870960460020842,
+    "Idle Std": 0.008626285502919993
+  },
+  "DoS slowloris": {
+    "Average Packet Size": 0.01021607729309236,
+    "Init_Win_bytes_backward": 0.010158087136780713,
+    "Packet Length Variance": 0.009710596336674817,
+    "Bwd Packets/s": 0.009655563444285004,
+    "Flow Packets/s": 0.00933256783258011
+  },
+  "FTP-Patator": {
+    "Destination Port": 0.021148904579459428,
+    "Fwd Packet Length Max": 0.010080885514904046,
+    "Init_Win_bytes_backward": 0.009177699697025022,
+    "Average Packet Size": 0.008731063199363637,
+    "Total Length of Fwd Packets": 0.008291679261423709
+  },
+  "Heartbleed": {
+    "Fwd Packet Length Mean": 0.0032885545385229246,
+    "Total Length of Bwd Packets": 0.0023560601566209767,
+    "Packet Length Variance": 0.0022214408526400353,
+    "Average Packet Size": 0.0021895016708565937,
+    "Fwd Packet Length Max": 0.0021225669554576416
+  },
+  "Infiltration": {
+    "Destination Port": 0.0073256979915990615,
+    "Total Length of Fwd Packets": 0.00459338300767586,
+    "Fwd Packet Length Mean": 0.004416618604395394,
+    "Fwd IAT Std": 0.004260478341124181,
+    "Average Packet Size": 0.0040341767572230165
+  },
+  "PortScan": {
+    "Bwd Packets/s": 0.03529211111345438,
+    "Total Length of Fwd Packets": 0.03394109809622819,
+    "Flow Packets/s": 0.029960096489086332,
+    "Bwd Packet Length Min": 0.02900929070720479,
+    "Average Packet Size": 0.022464948435279995
+  },
+  "SSH-Patator": {
+    "Destination Port": 0.01920272143009678,
+    "Init_Win_bytes_backward": 0.01010023683620512,
+    "Fwd Packet Length Max": 0.007479301507357731,
+    "Average Packet Size": 0.006975327764951848,
+    "Packet Length Variance": 0.0068389693636538955
+  },
+  "Web Attack - Brute Force": {
+    "Init_Win_bytes_backward": 0.011501445395464858,
+    "Bwd Packets/s": 0.008279274766443339,
+    "Average Packet Size": 0.00770500700410533,
+    "Init_Win_bytes_forward": 0.007631280016557674,
+    "Total Length of Fwd Packets": 0.00762869651815717
+  },
+  "Web Attack - Sql Injection": {
+    "Bwd Packets/s": 0.004757057757693773,
+    "Init_Win_bytes_backward": 0.004604979086393946,
+    "act_data_pkt_fwd": 0.003690082498118813,
+    "Flow Packets/s": 0.0035006042196196957,
+    "Destination Port": 0.0032923723868849442
+  },
+  "Web Attack - XSS": {
+    "Init_Win_bytes_backward": 0.008724436980173823,
+    "Bwd Packets/s": 0.0063008821233170005,
+    "Flow Packets/s": 0.006151098764879856,
+    "Total Length of Fwd Packets": 0.005962874021313541,
+    "Init_Win_bytes_forward": 0.0059256178350357205
+  }
+}

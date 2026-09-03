@@ -1,0 +1,5 @@
+Model,Accuracy,Precision(macro),Recall(macro),F1(macro),F1(weighted)
+Random Forest,0.9978,0.8411,0.887,0.8488,0.998
+XGBoost,0.9969,0.7722,0.9301,0.8188,0.9973
+LightGBM,0.6503,0.1453,0.2466,0.1612,0.716
+MLP,0.9708,0.6318,0.8683,0.6501,0.9753
