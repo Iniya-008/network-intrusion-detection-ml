@@ -1,6 +1,10 @@
-# network-intrusion-detection-ml
-Machine Learning based Network Intrusion Detection System using CIC-IDS2017 Dataset
-# Network Intrusion Detection using Machine Learning
+# Machine Learning Based Network Intrusion Detection System
+
+A Machine Learning based Network Intrusion Detection System (NIDS) developed using the **CIC-IDS2017 dataset** to detect and classify benign network traffic and multiple types of network attacks.
+
+The project follows a complete machine-learning pipeline including dataset exploration, data cleaning, exploratory data analysis, feature selection, class balancing using SMOTE, model training, evaluation, and SHAP-based explainability.
+
+---
 
 ## Team Members
 
@@ -8,63 +12,82 @@ Machine Learning based Network Intrusion Detection System using CIC-IDS2017 Data
 - Rubini S K
 - Dharshini S
 
-## College
-
-Amrita Vishwa Vidyapeetham
-
-## Objective
-
-Build a Machine Learning model that classifies different cyber attacks using the CIC IDS2017 dataset.
-
-## Dataset
-
-CIC IDS2017
-
-## Technologies
-
-- Python
-- Scikit-Learn
-- Pandas
-- NumPy
-- Matplotlib
-
-## Status
-
-🟢 Project Started
-
+**Institution:** Amrita Vishwa Vidyapeetham
 
 ---
 
-## Project Progress Log
+## Objective
 
-| Step | Script | Status | Output |
-|---|---|---|---|
-| 2. Dataset Exploration | `src/00_explore_single_file.py`, `src/00b_explore_all_files.py` | Done | Console summary of shape, labels, missing/infinite values, duplicates |
-| 3. Combine Files | `src/01_combine_files.py` | Done | Combined raw dataset (2,830,743 rows × 80 cols) |
-| 4. Data Cleaning | `src/02_clean_data.py`, `src/02b_final_dedupe.py`, `src/02c_verify_cleaned.py` | Done | Cleaned dataset (2,520,798 rows) — duplicates removed, missing/infinite values dropped, corrupted label text fixed |
-| 5. EDA | `src/03_eda.py` | Done | 4 graphs in `graphs/`: class distribution, feature distributions, correlation heatmap, outlier comparison |
-| 6. Feature Selection | `src/04_feature_selection.py` | Done | 78 → 32 features (removed zero-variance, highly correlated, and multicollinear columns). List in `docs/selected_features.txt` |
-| 7–9. Split + SMOTE | — | Not started | — |
-| 10. Model Training | — | Not started | — |
-| 11–13. Evaluation | — | Not started | — |
-| 14. SHAP | — | Not started | — |
-| 15. Report | — | Not started | — |
+The objective of this project is to develop a machine-learning based Network Intrusion Detection System capable of classifying network traffic into benign traffic and multiple attack categories.
 
-### Key Findings So Far
+The project focuses on handling the severe class imbalance present in the CIC-IDS2017 dataset and evaluating model performance using **Macro-F1** in addition to accuracy.
 
-- **Severe class imbalance**: BENIGN = 2,095,057 rows (83%); rarest classes (Heartbleed: 11, SQL Injection: 21, Infiltration: 36) are a tiny fraction. Macro-F1 will be prioritized over accuracy for this reason.
-- **Data quality issues found & fixed**: ~310,000 duplicate rows (within and across the 8 source files), ~1,600 rows with missing/infinite values (from zero-duration flows), corrupted characters in "Web Attack" label text.
-- **Feature redundancy**: 8 zero-variance columns, 24 columns with >0.95 correlation to another column, and 14 more removed via VIF (multicollinearity) — final feature set is 32 columns.
+---
 
-### How to Run
+## Dataset
 
-\`\`\`bash
-pip install -r requirements.txt
+### CIC-IDS2017
 
-# Place the 8 raw CIC-IDS2017 CSVs in dataset/raw/MachineLearningCVE/, then:
-python src/01_combine_files.py
-python src/02_clean_data.py
-python src/02b_final_dedupe.py
-python src/03_eda.py
-python src/04_feature_selection.py
-\`\`\`
+The project uses the **CIC-IDS2017** intrusion detection dataset.
+
+The dataset contains network-flow records representing both benign traffic and different types of cyber attacks.
+
+### Dataset Statistics
+
+| Stage | Result |
+|---|---:|
+| Combined raw dataset | 2,830,743 rows × 80 columns |
+| Cleaned dataset | 2,520,798 rows |
+| Original usable features | 78 |
+| Selected features | 32 |
+| Final test set | 504,160 rows |
+
+The raw CIC-IDS2017 CSV files are **not included in this repository** because of their large size.
+
+---
+
+# Project Workflow
+
+```text
+CIC-IDS2017 Dataset
+        |
+        v
+Dataset Exploration
+        |
+        v
+Data Cleaning
+        |
+        v
+Exploratory Data Analysis
+        |
+        v
+Feature Selection
+   78 → 32 Features
+        |
+        v
+Stratified 80/20 Split
+        |
+        +----------------------+
+        |                      |
+        v                      v
+     Training              Test Set
+        |                  504,160
+        v                  untouched
+      SMOTE                    |
+        |                      |
+        v                      |
+   Model Training <------------+
+        |
+        +---- Random Forest
+        |
+        +---- XGBoost
+        |
+        +---- LightGBM
+        |
+        +---- MLP
+        |
+        v
+Model Evaluation
+        |
+        v
+SHAP Explainability
