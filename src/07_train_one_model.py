@@ -55,6 +55,17 @@ elif MODEL_NAME == "mlp":
     X_test = X_test_s  # use scaled version for prediction
     display_name = "MLP"
 
+elif MODEL_NAME == "svm":
+    from sklearn.linear_model import SGDClassifier
+    from sklearn.preprocessing import StandardScaler
+    scaler = StandardScaler()
+    X_train_s = scaler.fit_transform(X_train)
+    X_test_s = scaler.transform(X_test)
+    model = SGDClassifier(loss="hinge", max_iter=1000, random_state=42, n_jobs=-1)
+    model.fit(X_train_s, y_train)
+    X_test = X_test_s  # use scaled version for prediction
+    display_name = "Linear SVM (SGD)"
+
 else:
     raise ValueError(f"Unknown model: {MODEL_NAME}")
 
@@ -65,6 +76,11 @@ t0 = time.time()
 y_pred = model.predict(X_test)
 pred_time = time.time() - t0
 print(f"Predicted in {pred_time:.1f}s")
+
+import joblib
+joblib.dump(model, f"results/{MODEL_NAME}_model.pkl")
+model_size_kb = os.path.getsize(f"results/{MODEL_NAME}_model.pkl") / 1024
+print(f"Model file size: {model_size_kb:.1f} KB")
 
 acc = accuracy_score(y_test, y_pred)
 prec_macro = precision_score(y_test, y_pred, average="macro", zero_division=0)

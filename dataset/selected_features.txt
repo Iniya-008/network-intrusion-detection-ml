@@ -1,0 +1,33 @@
+Fwd Packets Length Total
+Bwd Packets Length Total
+Fwd Packet Length Max
+Fwd Packet Length Min
+Fwd Packet Length Mean
+Bwd Packet Length Min
+Flow Bytes/s
+Flow Packets/s
+Flow IAT Min
+Fwd IAT Mean
+Fwd IAT Std
+Bwd IAT Total
+Bwd IAT Mean
+Bwd IAT Std
+Fwd PSH Flags
+Fwd URG Flags
+Bwd Packets/s
+Packet Length Min
+Packet Length Variance
+FIN Flag Count
+PSH Flag Count
+ACK Flag Count
+URG Flag Count
+ECE Flag Count
+Down/Up Ratio
+Avg Packet Size
+Init Fwd Win Bytes
+Init Bwd Win Bytes
+Fwd Act Data Packets
+Fwd Seg Size Min
+Active Mean
+Active Std
+Idle Std

@@ -220,3 +220,13 @@ __marimo__/
 # Ignore raw dataset
 dataset/raw/
 dataset/processed/
+
+# Generated datasets - do not push to GitHub
+dataset/*.csv
+dataset/*.json
+
+# Converted raw CSV files - do not push
+raw_data/
+
+# Trained model files - do not push
+results/*.pkl
